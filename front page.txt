@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Photo Gallery</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @keyframes page-slide {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(0); }
+        }
+        @keyframes text-appear {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes star-animation {
+            0% { opacity: 0; transform: scale(0.5); }
+            50% { opacity: 1; transform: scale(1.2); }
+            100% { opacity: 0; transform: scale(0.5); }
+        }
+        @keyframes snow-fall {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(100vh); }
+        }
+        .night-sky {
+            animation: page-slide 3s ease-out;
+            background-image: url('girl1.jpg');
+            background-size: cover;
+            background-position: center center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            color: #D5006D;
+            position: relative;
+            font-family: 'Poppins', sans-serif;
+            overflow: hidden;
+        }
+        .star {
+            position: absolute;
+            background-color: white;
+            border-radius: 50%;
+            width: 2px;
+            height: 2px;
+            animation: star-animation 1.5s infinite ease-in-out;
+        }
+        .snowflake {
+            position: absolute;
+            top: -10px;
+            width: 8px;
+            height: 8px;
+            background: white;
+            border-radius: 50%;
+            opacity: 0.8;
+            animation: snow-fall linear infinite;
+        }
+        .hero-content {
+            text-align: center;
+            z-index: 2;
+            padding: 30px;
+            margin-bottom: 20px;
+        }
+        .hero-content h1 {
+            font-size: 5rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #D5006D;
+            text-shadow: 
+                0 0 5px #F9E1B4,
+                0 0 10px #F9E1B4,
+                0 0 15px #F9E1B4;
+            font-family: 'Cinzel', serif;
+            animation: text-appear 2s ease-out forwards;
+        }
+        .explore-btn {
+            padding: 15px 30px;
+            font-size: 1.8rem;
+            background: linear-gradient(135deg, #7b2cbf, #4facfe);
+            color: #D4D7D9;
+            border: none;
+            border-radius: 25px;
+            text-decoration: none;
+            font-family: 'Roboto', sans-serif;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            animation: text-appear 2s ease-out forwards;
+            animation-delay: 3s;
+        }
+        .explore-btn:hover {
+            background: linear-gradient(50deg, #5d1d8e, #00aaff);
+            transform: scale(1.1);
+            box-shadow: 4px 5px rgba(0, 0, 0, 0.7);
+            color: #fff;
+        }
+        .scroll-down {
+            position: absolute;
+            bottom: 10px;
+            font-size: 5rem;
+            animation: bounce 2s infinite;
+            color: #D5006D;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+            opacity: 0;
+            animation: text-appear 2s ease-out forwards;
+            animation-delay: 4s;
+            cursor: pointer;
+            z-index: 2;
+        }
+        .scroll-down:hover {
+            transform: scale(1.2);
+            animation: bounce 2s infinite ease-in-out;
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <audio id="background-music" loop autoplay>
+        <source src="bgm1.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+    <div class="night-sky">
+        <div class="hero-content">
+            <h1>Welcome to Vino Gallery</h1>
+            <a href="category.html" class="explore-btn">Explore Now</a>
+        </div>
+        <a href="#" class="scroll-down">&#x2193;</a>
+    </div>
+
+    <script>
+        function createStars() {
+            const numberOfStars = 100;
+            const container = document.querySelector('.night-sky');
+            for (let i = 0; i < numberOfStars; i++) {
+                const star = document.createElement('div');
+                star.classList.add('star');
+                star.style.top = `${Math.random() * 100}vh`;
+                star.style.left = `${Math.random() * 100}vw`;
+                star.style.animationDuration = `${Math.random() * 1.5 + 1}s`;
+                star.style.animationDelay = `${Math.random() * 3}s`;
+                container.appendChild(star);
+            }
+        }
+        function createSnowflakes() {
+            const numberOfSnowflakes = 50;
+            const container = document.querySelector('.night-sky');
+            for (let i = 0; i < numberOfSnowflakes; i++) {
+                const snowflake = document.createElement('div');
+                snowflake.classList.add('snowflake');
+                snowflake.style.left = `${Math.random() * 100}vw`;
+                snowflake.style.animationDuration = `${Math.random() * 3 + 2}s`;
+                snowflake.style.animationDelay = `${Math.random() * 5}s`;
+                container.appendChild(snowflake);
+            }
+        }
+        window.onload = function() {
+            const music = document.getElementById("background-music");
+            music.play().catch(() => {
+                console.log('Autoplay blocked. Will play on user interaction.');
+            });
+            createStars();
+            createSnowflakes();
+        };
+    </script>
+</body>
+</html>

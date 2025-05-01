@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bridges Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color:white;
+            border :1x solid black;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <h1>Bridges  Photo Gallery</h1>
+    <div class="gallery">
+        <img src="br1.jpg" onclick="openFullView(this.src)" alt="Bridges  1">
+        <img src="br2.jpeg" onclick="openFullView(this.src)" alt="Bridges  2">
+        <img src="br3.jpeg" onclick="openFullView(this.src)" alt="Bridges  3">
+        <img src="br4.jpeg" onclick="openFullView(this.src)" alt="Bridges  4">
+        <img src="br5.jpeg" onclick="openFullView(this.src)" alt="Bridges  5">
+        <img src="br6.jpg" onclick="openFullView(this.src)" alt="Bridges  6">
+        <img src="br7.jpeg" onclick="openFullView(this.src)" alt="Bridges  7">
+        <img src="br8.jpeg" onclick="openFullView(this.src)" alt="Bridges  8">
+        <img src="br9.jpeg" onclick="openFullView(this.src)" alt="Bridges  9">
+        <img src="br10.jpeg" onclick="openFullView(this.src)" alt="Bridges  10">
+    </div>
+    <script>
+        function openFullView(src) {
+            window.location.href = 'fullview.html?src=' + encodeURIComponent(src);
+        }
+    </script>
+</body>
+</html>

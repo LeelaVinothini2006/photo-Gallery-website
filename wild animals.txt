@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wild Animals Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color:white;
+            border :1x solid black;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <h1>Wild Animals Photo Gallery</h1>
+    <div class="gallery">
+        <img src="wa1.jpg" onclick="openFullView(this.src)" alt="Wild Animals 1">
+        <img src="wa2.jpeg" onclick="openFullView(this.src)" alt="Wild Animals 2">
+        <img src="wa3.jpeg" onclick="openFullView(this.src)" alt="Wild Animals 3">
+        <img src="wa4.jpg" onclick="openFullView(this.src)" alt="Wild Animals 4">
+        <img src="wa5.jpeg" onclick="openFullView(this.src)" alt="Wild Animals 5">
+        <img src="wa10.jpg" onclick="openFullView(this.src)" alt="Wild Animals 6">
+        <img src="wa7.jpeg" onclick="openFullView(this.src)" alt="Wild Animals 7">
+        <img src="wa8.jpeg" onclick="openFullView(this.src)" alt="Wild Animals 8">
+        <img src="wa9.jpeg" onclick="openFullView(this.src)" alt="Wild Animals 9">
+        <img src="wa6.jpg" onclick="openFullView(this.src)" alt="Wild Animals 10">
+    </div>
+    <script>
+        function openFullView(src) {
+            window.location.href = 'fullview.html?src=' + encodeURIComponent(src);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WinterGallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color:white;
+            border :1x solid black;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+        }
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <h1>Winter Photo Gallery</h1>
+    <div class="gallery">
+        <img src="w1.jpeg" onclick="openFullView(this.src)" alt="Winter 1">
+        <img src="w2.jpg" onclick="openFullView(this.src)" alt="Winter 2">
+        <img src="w3.jpeg" onclick="openFullView(this.src)" alt="Winter3">
+        <img src="w4.jpeg" onclick="openFullView(this.src)" alt="Winter 4">
+        <img src="w5.jpeg" onclick="openFullView(this.src)" alt="Winter 5">
+        <img src="w6.jpeg" onclick="openFullView(this.src)" alt="Winter 6">
+        <img src="w7.jpeg" onclick="openFullView(this.src)" alt="Winter 7">
+        <img src="w8.jpeg" onclick="openFullView(this.src)" alt="Winter 8">
+        <img src="w9.jpeg" onclick="openFullView(this.src)" alt="Winter 9">
+        <img src="w10.jpeg" onclick="openFullView(this.src)" alt="Winter  10">
+    </div>
+    <script>
+        function openFullView(src) {
+            window.location.href = 'fullview.html?src=' + encodeURIComponent(src);
+        }
+    </script>
+</body>
+</html>

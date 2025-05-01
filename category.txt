@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Select Your Favourite Category - Vino Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('al6.avif');
+            background-size: cover; 
+            background-position: center; 
+            background-attachment: fixed; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .category-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            width: 80%;
+            max-width: 1200px;
+        }
+        .category {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            border-radius: 10px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .category:hover {
+            transform: scale(1.05);
+        }
+        .category img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.7;
+        }
+        .category .category-label {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        h1 {
+            position: absolute;
+            top: 20px;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #333;
+            text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.7);
+        }
+        .category.nature {
+            background-color:black ;
+        }
+        .category.birds {
+            background-color:black ;
+        }
+        .category.architecture {
+            background-color:black;
+        }
+        .category.animals {
+            background-color:black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Select Your Favourite Category</h1>
+    <div class="category-container">
+        <div class="category nature" onclick="window.location.href='Nature.html'">
+            <img src="n1.jpg" alt="Nature">
+            <div class="category-label">Nature</div>
+        </div>
+        <div class="category birds" onclick="window.location.href='Birds.html'">
+            <img src="b1.jpg" alt="Birds">
+            <div class="category-label">Birds</div>
+        </div>
+        <div class="category architecture" onclick="window.location.href='Architecture.html'">
+            <img htmlsrc="arch1.jpg" alt="Architecture">
+            <div class="category-label">Architecture</div>
+        </div>
+        <div class="category animals" onclick="window.location.href='animal.html'">
+            <img src="a1.jpg" alt="Animals">
+            <div class="category-label">Animals</div>
+        </div>
+    </div>
+</body>
+</html>

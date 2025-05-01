@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ancient Buildings Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color:white;
+            border :1x solid black;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <h1>Ancient Buildings  Photo Gallery</h1>
+    <div class="gallery">
+        <img src="ab1.jpg" onclick="openFullView(this.src)" alt="Ancient Building 1">
+        <img src="ab2.jpg" onclick="openFullView(this.src)" alt="Ancient Building 2">
+        <img src="ab3.jpeg" onclick="openFullView(this.src)" alt="Ancient Building 3">
+        <img src="ab4.jpeg" onclick="openFullView(this.src)" alt="Ancient Building 4" >
+        <img src="ab10.jpg" onclick="openFullView(this.src)" alt="Ancient Building 5">
+        <img src="ab6.jpeg" onclick="openFullView(this.src)" alt="Ancient Building 6">
+        <img src="ab7.jpeg" onclick="openFullView(this.src)" alt="Ancient Building 7">
+        <img src="ab8.jpg" onclick="openFullView(this.src)" alt="Ancient Building 8">
+        <img src="ab9.jpeg" onclick="openFullView(this.src)" alt="Ancient Building 9">
+        <img src="ab5.jpeg" onclick="openFullView(this.src)" alt="Ancient Building 10">
+    </div>
+    <script>
+        function openFullView(src) {
+            window.location.href = 'fullview.html?src=' + encodeURIComponent(src);
+        }
+    </script>
+</body>
+</html>

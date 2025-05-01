@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Domestic Birds Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            border: 1px solid black;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Domestic Birds Photo Gallery</h1>
+    <div class="gallery">
+        <img src="db1.jpg" onclick="openFullView(this.src)" alt="Domestic Birds 1">
+        <img src="db10.jpeg" onclick="openFullView(this.src)" alt="Domestic Birds 2">
+        <img src="db3.jpeg" onclick="openFullView(this.src)" alt="Domestic Birds 3">
+        <img src="db4.jpg" onclick="openFullView(this.src)" alt="Domestic Birds 4">
+        <img src="db5.jpeg" onclick="openFullView(this.src)" alt="Domestic Birds 5">
+        <img src="db6.jpeg" onclick="openFullView(this.src)" alt="Domestic Birds 6">
+        <img src="db7.jpg" onclick="openFullView(this.src)" alt="Domestic Birds 7">
+        <img src="db8.jpeg" onclick="openFullView(this.src)" alt="Domestic Birds 8">
+        <img src="db9.jpeg" onclick="openFullView(this.src)" alt="Domestic Birds 9">
+        <img src="db2.jpeg" onclick="openFullView(this.src)" alt="Domestic Birds 10">
+    </div>
+
+    <script>
+        function openFullView(src) {
+            window.location.href = 'fullview.html?src=' + encodeURIComponent(src);
+        }
+    </script>
+</body>
+</html>

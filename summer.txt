@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summer Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color:white;
+            border :1x solid black;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+        }
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <h1>Summer Photo Gallery</h1>
+    <div class="gallery">
+        <img src="s1.jpg" onclick="openFullView(this.src)" alt="Summer 1">
+        <img src="s2.jpg" onclick="openFullView(this.src)" alt="Summer 2">
+        <img src="s3.jpg" onclick="openFullView(this.src)" alt="Summer 3">
+        <img src="s4.jpg" onclick="openFullView(this.src)" alt="Summer 4">
+        <img src="s5.jpg" onclick="openFullView(this.src)" alt="Summer 5">
+        <img src="s6.jpg" onclick="openFullView(this.src)" alt="Summer 6">
+        <img src="s7.jpg" onclick="openFullView(this.src)" alt="Summer 7">
+        <img src="s8.jpg" onclick="openFullView(this.src)" alt="Summer 8">
+        <img src="s9.jpg" onclick="openFullView(this.src)" alt="Summer 9">
+        <img src="s10.jpg" onclick="openFullView(this.src)" alt="Summer 10">
+    </div>
+    <script>
+        function openFullView(src) {
+            window.location.href = 'fullview.html?src=' + encodeURIComponent(src);
+        }
+    </script>
+</body>
+</html>
